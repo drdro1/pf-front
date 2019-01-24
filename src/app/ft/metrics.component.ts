@@ -5,5 +5,5 @@ import { Component } from '@angular/core';
   templateUrl: './metrics.component.html'
 })
 
-export class MetricsComponent {
+export class FtMetricsComponent {
 }

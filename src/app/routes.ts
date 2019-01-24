@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
-import { SpecificsComponent } from './ft/specifics.component';
-import { MetricsComponent } from './ft/metrics.component';
+import { FtHomeComponent } from './ft';
+import { FioHomeComponent } from './fio';
 
 export const appRoutes: Routes = [
-  {path: 'specifics', component: SpecificsComponent },
-  {path: 'metrics', component: MetricsComponent }
+  {path: 'fiohome', component: FioHomeComponent },
+  {path: 'fthome', component: FtHomeComponent }
 ];

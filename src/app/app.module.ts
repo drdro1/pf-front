@@ -6,15 +6,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavBarComponent } from './nav/navbar.component';
 
 import { appRoutes } from './routes';
-import { SpecificsComponent } from './ft/specifics.component';
-import { MetricsComponent } from './ft/metrics.component';
+
+import { FioHomeComponent } from './fio/index';
+import { FtSpecificsComponent, FtHomeComponent, FtMetricsComponent } from './ft/index';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
-    SpecificsComponent,
-    MetricsComponent
+    FioHomeComponent,
+    FtHomeComponent,
+    FtMetricsComponent,
+    FtSpecificsComponent
   ],
   imports: [
     BrowserModule,

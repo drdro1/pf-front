@@ -1,5 +1,5 @@
 <header class="container-fluid">
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-info" id="mainNav">
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="#top">Planet Funds</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
@@ -18,8 +18,8 @@
               </div>
             </li>
 
-            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#link1">Onboard</a></li>
-            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#link2">Trade</a></li>
+            <li class="nav-item"><a [routerLink]="['/fiohome']" routerLinkActive="active" class="nav-link js-scroll-trigger" href="#link1">Onboard</a></li>
+            <li class="nav-item"><a [routerLink]="['/fthome']" routerLinkActive="active"  class="nav-link js-scroll-trigger" href="#link2">Trade</a></li>
             <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#link3">Other</a></li>
 
             <form class="form-inline my-2 my-lg-0">

@@ -5,5 +5,5 @@ import { Component } from '@angular/core';
   templateUrl: './specifics.component.html'
 })
 
-export class SpecificsComponent {
+export class FtSpecificsComponent {
 }
