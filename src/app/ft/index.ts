@@ -1,3 +1,3 @@
-export * from './ft.home.component';
-export * from './metrics.component';
-export * from './specifics.component';
+export * from './ft-home.component';
+export * from './ft-search.component';
+export * from './ft-portfolio.component';

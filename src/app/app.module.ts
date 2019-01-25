@@ -8,7 +8,7 @@ import { NavBarComponent } from './nav/navbar.component';
 import { appRoutes } from './routes';
 
 import { FioHomeComponent } from './fio/index';
-import { FtSpecificsComponent, FtHomeComponent, FtMetricsComponent } from './ft/index';
+import { FtHomeComponent, FtPortfolioComponent, FtSearchComponent } from './ft/index';
 
 @NgModule({
   declarations: [
@@ -16,8 +16,8 @@ import { FtSpecificsComponent, FtHomeComponent, FtMetricsComponent } from './ft/
     NavBarComponent,
     FioHomeComponent,
     FtHomeComponent,
-    FtMetricsComponent,
-    FtSpecificsComponent
+    FtPortfolioComponent,
+    FtSearchComponent
   ],
   imports: [
     BrowserModule,
