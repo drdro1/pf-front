@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 
 export class FtHomeComponent {
   currentPage = 'home';
+  filterBy = 'all';
 
   changePage(pageName: string) {
     this.currentPage = pageName;

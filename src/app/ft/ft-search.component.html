@@ -12,35 +12,19 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>FRA3718193742</td>
-        <td>Carmignac European Titans Equity</td>
-        <td>Carmignac Sub Fund Name</td>
-        <td>Carmignac Gestion</td>
-        <td>Equities</td>
-        <td>14.32%</td>
-        <td>20.78%</td>
-        <td><button class="btn btn-default">Subscribe</button></td>
+
+      <tr *ngFor="let fund of funds">
+        <td>{{fund.isin}}</td>
+        <td>{{fund.fundName}}</td>
+        <td>{{fund.subFundName}}</td>
+        <td>{{fund.assetManager}}</td>
+        <td>{{fund.category}}</td>
+        <td>{{fund.oneYearPerf}}</td>
+        <td>{{fund.oneYearVol}}</td>
+        <!-- <td><app-trade-screen></app-trade-screen></td> -->
+        <td><button class="btn btn-success" (click)="openModal()">Subscribe</button></td>
       </tr>
-      <tr>
-          <td>FRA3718193742</td>
-          <td>Carmignac European Titans Equity</td>
-          <td>Carmignac Sub Fund Name</td>
-          <td>Carmignac Gestion</td>
-          <td>Equities</td>
-          <td>14.32%</td>
-          <td>20.78%</td>
-          <td><button class="btn btn-default">Subscribe</button></td>
-        </tr>
-        <tr>
-            <td>FRA3718193742</td>
-            <td>Carmignac European Titans Equity</td>
-            <td>Carmignac Sub Fund Name</td>
-            <td>Carmignac Gestion</td>
-            <td>Equities</td>
-            <td>14.32%</td>
-            <td>20.78%</td>
-            <td><button class="btn btn-default">Subscribe</button></td>
-          </tr>
     </tbody>
   </table>
+
+  <!-- <app-trade-screen closeOnBodyClick="false" elementId="ftOrderExecution" title="Fund Trade Order Execution"></app-trade-screen> -->

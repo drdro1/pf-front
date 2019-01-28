@@ -2,11 +2,17 @@
   <div class="row">
       <div class="col-sm-2 col-md-2">
           <div class="py-2 sticky-top flex-grow-1">
-              <div class="nav flex-sm-column">
-                  <a href="" class="nav-link d-none d-sm-inline">Trade Home</a>
+              <div class="nav flex-sm-column bg-light">
+                  <div class="btn-group-vertical btn-group-sm">
+                      <button class="btn btn-default" [class.active]="filterBy==='all'" (click)="changePage('search')">Trade Home</button>
+                      <button class="btn btn-default" [class.active]="filterBy==='beginner'" (click)="changePage('search')">Fund search</button>
+                      <button class="btn btn-default" [class.active]="filterBy==='intermediate'" (click)="changePage('portfolio')">My Holdings</button>
+                      <button class="btn btn-default" [class.active]="filterBy==='advanced'" (click)="changePage('activity')">Activity Log</button>
+                  </div>
+                  <!-- <a href="" class="nav-link d-none d-sm-inline">Trade Home</a>
                   <a (click)="changePage('search')" class="nav-link">Fund Search</a>
                   <a (click)="changePage('portfolio')" class="nav-link">My Holdings</a>
-                  <a (click)="changePage('activity')" class="nav-link">Activity Log</a>
+                  <a (click)="changePage('activity')" class="nav-link">Activity Log</a> -->
               </div>
           </div>
       </div>

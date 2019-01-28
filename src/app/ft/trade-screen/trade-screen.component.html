@@ -1,0 +1,38 @@
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-title">Planet Funds Order Execution</h4>
+  <button
+    type="button"
+    class="close"
+    aria-describedby="modal-title"
+    (click)="modal.dismiss('Cross click')"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <!-- <div style="text-align:left;">Fund Name: <span style="float:right;">Carmignac Actions Europe</span></div> -->
+  <div class="page-header">
+    <div class="row">
+      <div class="col-md-6"><span>Fund Name</span></div>
+      <div class="col-md-6"><span class="text-right">Carmignac Actions Europe</span></div>
+    </div>
+  </div>
+  <form #orderForm="ngForm" (ngSubmit)="subscribe(orderForm)" autocomplete="off" novalidate>
+    <div class="form-group" [ngClass]="{'error': orderForm.controls.numShares?.invalid && orderForm.controls.numShares?.touched}">
+      <div class="row">
+        <label for="orderNumShares" class="control-label col-md-3">Num Shares:</label>
+        <!-- <em *ngIf="orderForm.controls.numShares?.invalid && (orderForm.controls.numShares?.touched)">Required</em> -->
+        <input (ngModel)="orderForm.numShares" name="numShares" required id="numShares" type="number"
+          class="form-control col-md-3" placeholder="# Shares" />
+
+          <input (ngModel)="orderForm.amount" name="amount" required id="amount" type="number" step="0.01"
+          class="form-control col-md-3" placeholder="Amount" />
+          <label for="orderAmount" class="control-label col-md-3">Amount:</label>
+        <!-- <em *ngIf="orderForm.controls.numShares?.invalid && (orderForm.controls.numShares?.touched)">Required</em> -->
+      </div>
+    </div>
+  </form>
+
+  <button class="btn btn-success">BUY</button>
+  <button class="btn btn-danger">SELL</button>
+</div>
