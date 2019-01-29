@@ -1,9 +1,10 @@
-import { Component } from "@angular/core";
-import { NgbActiveModal, NgbModal } from "@ng-bootstrap/ng-bootstrap";
+import { Component, ViewEncapsulation } from '@angular/core';
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-  selector: "app-trade-screen",
-  templateUrl: './trade-screen.component.html'
+  selector: 'app-trade-screen',
+  templateUrl: './trade-screen.component.html',
+  styleUrls: ['./trade-screen.component.css']
 })
 
 export class TradeScreenComponent {

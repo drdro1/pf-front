@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavBarComponent } from './nav/navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -24,6 +25,7 @@ import { FormsModule } from '@angular/forms';
     TradeScreenComponent
   ],
   imports: [
+    AngularFontAwesomeModule,
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes),

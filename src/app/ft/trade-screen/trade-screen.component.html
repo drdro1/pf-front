@@ -1,38 +1,38 @@
-<div class="modal-header">
-  <h4 class="modal-title" id="modal-title">Planet Funds Order Execution</h4>
-  <button
-    type="button"
-    class="close"
-    aria-describedby="modal-title"
-    (click)="modal.dismiss('Cross click')"
-  >
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
-<div class="modal-body">
-  <!-- <div style="text-align:left;">Fund Name: <span style="float:right;">Carmignac Actions Europe</span></div> -->
-  <div class="page-header">
-    <div class="row">
-      <div class="col-md-6"><span>Fund Name</span></div>
-      <div class="col-md-6"><span class="text-right">Carmignac Actions Europe</span></div>
+<div class="container rect-white-tab">
+  <div class="row align-items-center">
+    <div class="col">
+      <label class="instant-order">INSTANT ORDER</label>
     </div>
   </div>
-  <form #orderForm="ngForm" (ngSubmit)="subscribe(orderForm)" autocomplete="off" novalidate>
-    <div class="form-group" [ngClass]="{'error': orderForm.controls.numShares?.invalid && orderForm.controls.numShares?.touched}">
-      <div class="row">
-        <label for="orderNumShares" class="control-label col-md-3">Num Shares:</label>
-        <!-- <em *ngIf="orderForm.controls.numShares?.invalid && (orderForm.controls.numShares?.touched)">Required</em> -->
-        <input (ngModel)="orderForm.numShares" name="numShares" required id="numShares" type="number"
-          class="form-control col-md-3" placeholder="# Shares" />
+</div>
 
-          <input (ngModel)="orderForm.amount" name="amount" required id="amount" type="number" step="0.01"
-          class="form-control col-md-3" placeholder="Amount" />
-          <label for="orderAmount" class="control-label col-md-3">Amount:</label>
-        <!-- <em *ngIf="orderForm.controls.numShares?.invalid && (orderForm.controls.numShares?.touched)">Required</em> -->
+<div class="modal-body">
+  <br>
+  <div class="row justify-content-end" style="padding-right: 15px">
+      <fa name="credit-card" size="2x"></fa>
+      <label style="font: Helvetica; font-size:18px; padding-left: 7px"> 250.090,76</label>
+  </div>
+
+  <br>
+  <form #orderForm="ngForm" (ngSubmit)="subscribe(orderForm)" autocomplete="off" novalidate>
+    <div class="row">
+      <div class="col justify-content-start">
+        <label for="numShares">NUMBER OF SHARES</label>
       </div>
+      <div class="col justify-content-end">
+          <label for="amount">AMOUNT IN EUR</label>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col justify-content-start">
+            <input size="10" (ngModel)="order.numShares" type="number" class="form-control-md" id="numShares" placeholder="numShares">
+        </div>
+        <div class="col justify-content-end">
+            <input size="10" (ngModel)="order.amount"  type="number" step="0.01" class="form-control-md" id="amount" placeholder="Amount">
+        </div>
     </div>
   </form>
 
-  <button class="btn btn-success">BUY</button>
-  <button class="btn btn-danger">SELL</button>
+  <button class="bg-buy">BUY</button>
+  <button class="bg-sell">SELL</button>
 </div>

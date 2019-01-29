@@ -1,0 +1,49 @@
+ /* .my-modal  {
+  -webkit-border-radius: 25px 25px 0 0;
+  -moz-border-radius: 25px 25px 0 0;
+  border-radius: 25px 25px 0 0;
+  background: transparent
+  } */
+
+.rect-white-tab {
+  height: 50px;
+  opacity: 0.91;
+  border-radius: 25px 25px 0 0;
+  background: linear-gradient(135deg, #2DC9EB 0%, #14D2B8 100%);}
+
+.instant-order {
+  padding-top: 15px;
+  height: 22px;
+  width: 434px;
+  color: #FFFFFF;
+  font-family: Helvetica;
+  font-size: 18px;
+  letter-spacing: 1.45px;
+  line-height: 19px;
+  text-align: center;
+}
+
+.bg-buy {
+  background: linear-gradient(314.33deg, #645AFF 0%, #A573FF 100%);
+	height: 53.63px;
+	width: 173px;
+	color: #FFFFFF;
+	font-family: Helvetica;
+	font-size: 14px;
+	letter-spacing: 2.78px;
+	line-height: 20px;
+	text-align: center;
+}
+
+.bg-sell {
+	height: 54px;
+	width: 173px;
+	background-color: #FFFFFF;
+}
+
+
+.bg {
+	height: 53.63px;
+	width: 173px;
+	background: linear-gradient(314.33deg, #645AFF 0%, #A573FF 100%);
+}

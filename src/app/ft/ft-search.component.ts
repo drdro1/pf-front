@@ -1,13 +1,14 @@
-import { Component, Inject, Injector, Input, OnInit, PLATFORM_ID } from '@angular/core';
+import { Component, Inject, Injector, Input, OnInit, PLATFORM_ID, ViewEncapsulation } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { IFund } from '../ft/shared/fund.model';
 import {FundsService } from '../ft/shared/funds.service';
-import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbActiveModal, NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 import { TradeScreenComponent } from './trade-screen/trade-screen.component';
 
 @Component({
+  encapsulation: ViewEncapsulation.None,
   selector: 'app-ft-search',
-  templateUrl: './ft-search.component.html'
+  templateUrl: './ft-search.component.html',
 })
 
 export class FtSearchComponent implements OnInit {
@@ -26,7 +27,12 @@ export class FtSearchComponent implements OnInit {
   }
 
   openModal() {
-    const modalRef = this.modalService.open(TradeScreenComponent);
+    const ngbModalOptions: NgbModalOptions = {
+      size: 'md'
+      // ,windowClass: 'modal-xl'
+    };
+
+    const modalRef = this.modalService.open(TradeScreenComponent, ngbModalOptions);
 
     modalRef.result.then((result) => {
       console.log(result);
