@@ -23,27 +23,88 @@
   text-align: center;
 }
 
-.bg-buy {
-  background: linear-gradient(314.33deg, #645AFF 0%, #A573FF 100%);
+.qty-input::-webkit-inner-spin-button,
+.qty-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  width: 15px;
+}
+
+
+.save-button {
 	height: 53.63px;
 	width: 173px;
-	color: #FFFFFF;
-	font-family: Helvetica;
-	font-size: 14px;
-	letter-spacing: 2.78px;
-	line-height: 20px;
-	text-align: center;
 }
-
-.bg-sell {
-	height: 54px;
-	width: 173px;
-	background-color: #FFFFFF;
-}
-
 
 .bg {
 	height: 53.63px;
 	width: 173px;
 	background: linear-gradient(314.33deg, #645AFF 0%, #A573FF 100%);
+}
+
+.buy {
+	height: 20px;
+	width: 173px;
+
+}
+
+.buy-button {
+  background: linear-gradient(314.33deg, #645AFF 0%, #A573FF 100%);
+  padding: 5px;
+  height: 53.63px;
+  width: 173px;
+  color: #FFFFFF;
+	font-family: Helvetica;
+	font-size: 14px;
+	letter-spacing: 2.78px;
+	line-height: 20px;
+	text-align: center;
+  border: white;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 173px;
+}
+
+.square-btn{
+  height: 30px;
+  width: 100px;
+  /* display: inline-block; */
+  padding: 7px 20px;
+  border-radius: 25px;
+  color: #FFF;
+  background: linear-gradient(314.33deg, #645AFF 0%, #A573FF 100%);
+  transition: .4s;
+  text-align: center;
+  display: table;
+    -moz-box-sizing: border-box;
+}
+
+.square-btn2{
+  display: inline-block;
+  padding: 7px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  color: #FFF;
+  background-image: -webkit-linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
+  background-image: linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
+  transition: .4s;
+}
+
+.buy-span{
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+
+  font-family: Helvetica;
+	font-size: 10px;
+	letter-spacing: 2.78px;
+	line-height: 20px;
+}
+
+.square-btn:hover {
+  background-image: -webkit-linear-gradient(45deg, #FFC107 0%, #f76a35 100%);
+  background-image: linear-gradient(45deg, #FFC107 0%, #f76a35 100%);
 }

@@ -28,8 +28,8 @@ export class FtSearchComponent implements OnInit {
 
   openModal() {
     const ngbModalOptions: NgbModalOptions = {
-      size: 'md'
-      // ,windowClass: 'modal-xl'
+      size: 'md',
+      windowClass: 'myCustomModalClass'
     };
 
     const modalRef = this.modalService.open(TradeScreenComponent, ngbModalOptions);

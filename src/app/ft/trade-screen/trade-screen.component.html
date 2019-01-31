@@ -12,27 +12,38 @@
       <fa name="credit-card" size="2x"></fa>
       <label style="font: Helvetica; font-size:18px; padding-left: 7px"> 250.090,76</label>
   </div>
-
   <br>
   <form #orderForm="ngForm" (ngSubmit)="subscribe(orderForm)" autocomplete="off" novalidate>
-    <div class="row">
-      <div class="col justify-content-start">
-        <label for="numShares">NUMBER OF SHARES</label>
+      <div class="row" style="height: 20px;">
+          <div class="col-md-6">
+            <label class="form" for="numShares">NUMBER SHARES</label>
+          </div>
+          <div class="col-md-6">
+            <label for="amount" class="pull-right">AMOUNT IN EUR</label>
+          </div>
       </div>
-      <div class="col justify-content-end">
-          <label for="amount">AMOUNT IN EUR</label>
+      <div class="row justify-content-center" style="height: 10px;">
+          <span>or</span>
       </div>
-    </div>
-    <div class="row">
-        <div class="col justify-content-start">
-            <input size="10" (ngModel)="order.numShares" type="number" class="form-control-md" id="numShares" placeholder="numShares">
-        </div>
-        <div class="col justify-content-end">
-            <input size="10" (ngModel)="order.amount"  type="number" step="0.01" class="form-control-md" id="amount" placeholder="Amount">
-        </div>
-    </div>
+      <div class="row" style="height: 20px;">
+          <div class="col-md-6">
+              <input class="form-control qty-input" style="width: 130px;" (ngModel)="order.numShares" type="number" id="numShares" placeholder="numShares">
+          </div>
+
+          <div class="col-md-6">
+              <input class="form-control qty-input pull-right" style="width: 130px;" (ngModel)="order.amount" type="number"  id="amount" placeholder="Amount">
+          </div>
+      </div>
   </form>
 
-  <button class="bg-buy">BUY</button>
-  <button class="bg-sell">SELL</button>
+  <br>
+  <br>
+  <div class="modal-footer">
+    <a href="#" class="square-btn"><span class="buy-span">BUY</span></a>
+    <!-- <button class="square-btn pull-left">BUY</button> -->
+    <button class="sell-button pull-right">SELL</button>
+  </div>
 </div>
+
+
+
