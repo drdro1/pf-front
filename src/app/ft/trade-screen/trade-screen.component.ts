@@ -1,5 +1,6 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { IFundLong } from '../shared/fund.model';
 
 @Component({
   selector: 'app-trade-screen',
@@ -8,6 +9,7 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 
 export class TradeScreenComponent {
+  @Input() fundInfo: IFundLong;
   private orderForm;
 
   constructor(public modal: NgbActiveModal) {}

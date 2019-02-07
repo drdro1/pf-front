@@ -25,9 +25,13 @@ export class RestService {
       map(this.extractData));
   }
 
+  getFundSearch(): Observable<any> {
+    return this.http.get(this.endpoint + 'fundSearch').pipe(
+      map(this.extractData));
+  }
+
   getFundInfoForOrder(id): Observable<any> {
-    const request = this.endpoint + 'fundInfoForOrder?id=' + id;
-    console.log('Issuing following request -> ' + request);
+    console.log('issuingCall: ' + this.endpoint + 'fundInfoForOrder?id=' + id);
     return this.http.get(this.endpoint + 'fundInfoForOrder?id=' + id).pipe(
       map(this.extractData));
   }

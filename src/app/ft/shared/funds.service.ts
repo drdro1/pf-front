@@ -1,17 +1,17 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { Subject, Observable } from 'rxjs';
-import { IFund } from './fund.model';
+import { IFundShort } from './fund.model';
 
 @Injectable()
 export class FundsService {
-  getFunds(): Observable<IFund[]> {
-    const subject = new Subject<IFund[]>();
+  getFunds(): Observable<IFundShort[]> {
+    const subject = new Subject<IFundShort[]>();
     setTimeout(() => {subject.next(FUNDS); subject.complete(); }, 100);
     return subject;
   }
 }
 
-const FUNDS: IFund[] = [
+const FUNDS: IFundShort[] = [
   {
     id: 1,
     isin: 'FRA3718193742',

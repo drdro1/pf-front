@@ -1,6 +1,6 @@
 import { Component, Inject, Injector, Input, OnInit, PLATFORM_ID, ViewEncapsulation } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { IFund } from '../ft/shared/fund.model';
+import { IFundShort, IFundLong } from '../ft/shared/fund.model';
 import {FundsService } from '../ft/shared/funds.service';
 import { NgbActiveModal, NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 import { TradeScreenComponent } from './trade-screen/trade-screen.component';
@@ -13,8 +13,7 @@ import { RestService } from './shared/rest.service';
 })
 
 export class FtSearchComponent implements OnInit {
-  // @Input() funds: IFund[];
-  funds: IFund[];
+  funds: IFundShort[];
   private modalService: NgbModal;
 
 
@@ -28,20 +27,27 @@ export class FtSearchComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.fundsService.getFunds().subscribe(funds => this.funds = funds);
+    this.restService.getFundSearch().subscribe((data: IFundShort[]) => {
+       console.log('ngInit received data = ' + data[0]['fundName']);
+        this.funds = data;
+    });
   }
 
-  openModal(fundId: number) {
+  subscribe(fundId: number) {
+    this.restService.getFundInfoForOrder(fundId).subscribe((data: IFundLong) => {
+      console.log('received data = ' + data['fundName']);
+      this.openModal(data);
+    });
+  }
+
+  openModal(fundInfo: IFundLong) {
     const ngbModalOptions: NgbModalOptions = {
-      // size: "md",
+      size: 'lg',
       windowClass: 'myCustomModalClass'
     };
 
-    this.restService.getFundInfoForOrder(fundId).subscribe((data: {}) => {
-      console.log('received data = ' + data['fundName']);
-    });
-
     const modalRef = this.modalService.open(TradeScreenComponent, ngbModalOptions);
+    modalRef.componentInstance.fundInfo = fundInfo;
 
     modalRef.result.then((result) => {
       console.log(result);

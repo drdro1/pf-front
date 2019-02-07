@@ -1,57 +1,50 @@
-<div class="modal-header">
-  <h4 class="modal-title" id="modal-title" align="center">INSTANT ORDER</h4>
-  <button type="button" class="close" aria-describedby="modal-title" (click)="modal.dismiss('Cross click')">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
-
-
-<div class="modal-body">
-  <!-- <div style="text-align:left;">Fund Name: <span style="float:right;">Carmignac Actions Europe</span></div> -->
-  <div class="page-header">
-    <div class="row">
-      <div class="col-md-10"><span>Fund Name: Carmignac Actions Europe</span></div>
-      <!-- <div class="col-md-6"><span class="text-right">Carmignac Actions Europe</span></div> -->
+<div class="container rect-white-tab">
+  <div class="row align-items-center">
+    <div class="col">
+      <label class="instant-order">INSTANT ORDER</label>
     </div>
   </div>
+</div>
 
-  <fa name="credit-card" size="2x"></fa>
-  <label>250.090,76</label>
+<div class="modal-body">
+  <br>
+  <div class="row justify-content-end" style="padding-right: 15px">
+      <fa name="credit-card" size="2x"></fa>
+      <label style="font: Helvetica; font-size:18px; padding-left: 7px"> 250.090,76</label>
+  </div>
+  <br>
+  <form #orderForm="ngForm" (ngSubmit)="subscribe(orderForm)" autocomplete="off" novalidate>
+      <div class="row" style="height: 20px;">
+          <div class="col-md-6">
+            <label class="form" for="numShares">NUMBER SHARES</label>
+          </div>
+          <div class="col-md-6">
+            <label for="amount" class="pull-right">AMOUNT IN EUR</label>
+          </div>
+      </div>
+      <div class="row justify-content-center" style="height: 10px;">
+          <span>or</span>
+      </div>
+      <div class="row" style="height: 20px;">
+          <div class="col-md-6">
+              <input class="form-control qty-input" style="width: 130px;"
+                (ngModel)="order.numShares" type="number" id="numShares" placeholder="numShares">
+          </div>
 
-  <form #orderForm="ngForm" (ngSubmit)="subscribe(orderForm)" autocomplete="off" novalidate>
-      <div class="form-row">
-        <div class="form-group col-md-5 justify-content-start">
-          <label for="numShares">NUMBER OF SHARES</label>
-          <em *ngIf="orderForm.controls.numShares?.invalid && (orderForm.controls.numShares?.touched)">Required</em>
-          <input (ngModel)="order.numShares" type="number" class="form-control" id="numShares" placeholder="numShares">
-        </div>
-        <div class="form-group col-md-1">
-          <label style="color:transparent">h</label> -->
-          <span>&nbsp;or&nbsp;</span>
-        </div>
-        <div class="form-group col-md-5 justify-content-end">
-          <label for="amount">AMOUNT IN EUR</label>
-          <em *ngIf="orderForm.controls.amount?.invalid && (orderForm.controls.amount?.touched)">Required</em>
-          <input (ngModel)="order.amount"  type="number" step="0.01" class="form-control" id="amount" placeholder="Amount">
-        </div>
-      </div>
-    </form>
-  <!--
-  <form #orderForm="ngForm" (ngSubmit)="subscribe(orderForm)" autocomplete="off" novalidate>
-      <div class="form-group" [ngClass]="{'error': orderForm.controls.numShares?.invalid && orderForm.controls.numShares?.touched}">
-        <label for="numShares" class="control-label col-md-3">Num Shares:</label>
-        <em *ngIf="orderForm.controls.numShares?.invalid && (orderForm.controls.numShares?.touched)">Required</em>
-        <input (ngModel)="orderForm.numShares" name="numShares" required id="numShares" type="number"
-          class="form-control col-md-3" placeholder="# Shares" />
-      </div>
-      <div class="form-group" [ngClass]="{'error': orderForm.controls.amount?.invalid && orderForm.controls.amount?.touched}">
-          <input (ngModel)="orderForm.amount" name="amount" required id="amount" type="number" step="0.01"
-          class="form-control col-md-3" placeholder="Amount" />
-          <label for="orderAmount" class="control-label col-md-3">Amount:</label>
-          <em *ngIf="orderForm.controls.numShares?.invalid && (orderForm.controls.numShares?.touched)">Required</em>
+          <div class="col-md-6">
+              <input class="form-control qty-input pull-right" style="width: 130px;"
+                (ngModel)="order.amount" type="number"  id="amount" placeholder="Amount">
+          </div>
       </div>
   </form>
--->
-  <button type="submit(" class="btn btn-success">BUY</button>
-  <button type="submit" class="btn btn-danger">SELL</button>
+
+  <br>
+  <br>
+  <div class="modal-footer">
+    <a href="#" class="anchor buy-anchor"><span class="span buy-span">BUY</span></a>
+    <a href="#" class="anchor sell-anchor"><span class="span sell-span">SELL</span></a>
+  </div>
 </div>
+
+
+
