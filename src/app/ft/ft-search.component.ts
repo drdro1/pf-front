@@ -4,6 +4,7 @@ import { IFund } from '../ft/shared/fund.model';
 import {FundsService } from '../ft/shared/funds.service';
 import { NgbActiveModal, NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 import { TradeScreenComponent } from './trade-screen/trade-screen.component';
+import { RestService } from './shared/rest.service';
 
 @Component({
   encapsulation: ViewEncapsulation.None,
@@ -16,7 +17,11 @@ export class FtSearchComponent implements OnInit {
   funds: IFund[];
   private modalService: NgbModal;
 
-  constructor(private fundsService: FundsService, @Inject(PLATFORM_ID) private platformId: Object, private injector: Injector) {
+
+  constructor(private fundsService: FundsService,
+    private restService: RestService,
+    @Inject(PLATFORM_ID) private platformId: Object,
+     private injector: Injector) {
     if ( isPlatformBrowser(this.platformId)) {
       this.modalService = this.injector.get(NgbModal);
     }
@@ -26,11 +31,15 @@ export class FtSearchComponent implements OnInit {
     this.fundsService.getFunds().subscribe(funds => this.funds = funds);
   }
 
-  openModal() {
+  openModal(fundId: number) {
     const ngbModalOptions: NgbModalOptions = {
-      size: 'md',
+      // size: "md",
       windowClass: 'myCustomModalClass'
     };
+
+    this.restService.getFundInfoForOrder(fundId).subscribe((data: {}) => {
+      console.log('received data = ' + data['fundName']);
+    });
 
     const modalRef = this.modalService.open(TradeScreenComponent, ngbModalOptions);
 

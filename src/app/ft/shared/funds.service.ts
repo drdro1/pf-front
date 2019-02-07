@@ -13,6 +13,7 @@ export class FundsService {
 
 const FUNDS: IFund[] = [
   {
+    id: 1,
     isin: 'FRA3718193742',
     fundName: 'Carmignac European Titans Equity',
     subFundName: 'CETE Sub Fund Name',
@@ -22,6 +23,7 @@ const FUNDS: IFund[] = [
     oneYearVol: 0.234
   },
   {
+    id: 2,
     isin: 'FRA558430132',
     fundName: 'Carmignac High Yield Navigators',
     subFundName: 'CHYN Sub Fund Name',
@@ -31,6 +33,7 @@ const FUNDS: IFund[] = [
     oneYearVol: 0.088
   },
   {
+    id: 3,
     isin: 'FRA229482025',
     fundName: 'Carmignac Balanced Dynamic Blend',
     subFundName: 'CBDB Sub Fund Name',

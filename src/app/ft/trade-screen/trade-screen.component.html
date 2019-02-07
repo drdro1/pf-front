@@ -27,11 +27,13 @@
       </div>
       <div class="row" style="height: 20px;">
           <div class="col-md-6">
-              <input class="form-control qty-input" style="width: 130px;" (ngModel)="order.numShares" type="number" id="numShares" placeholder="numShares">
+              <input class="form-control qty-input" style="width: 130px;"
+                (ngModel)="order.numShares" type="number" id="numShares" placeholder="numShares">
           </div>
 
           <div class="col-md-6">
-              <input class="form-control qty-input pull-right" style="width: 130px;" (ngModel)="order.amount" type="number"  id="amount" placeholder="Amount">
+              <input class="form-control qty-input pull-right" style="width: 130px;"
+                (ngModel)="order.amount" type="number"  id="amount" placeholder="Amount">
           </div>
       </div>
   </form>
@@ -39,9 +41,8 @@
   <br>
   <br>
   <div class="modal-footer">
-    <a href="#" class="square-btn"><span class="buy-span">BUY</span></a>
-    <!-- <button class="square-btn pull-left">BUY</button> -->
-    <button class="sell-button pull-right">SELL</button>
+    <a href="#" class="anchor buy-anchor"><span class="span buy-span">BUY</span></a>
+    <a href="#" class="anchor sell-anchor"><span class="span sell-span">SELL</span></a>
   </div>
 </div>
 

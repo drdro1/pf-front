@@ -1,4 +1,5 @@
 export interface IFund {
+  id: number;
   isin: string;
   fundName: string;
   subFundName: string;
